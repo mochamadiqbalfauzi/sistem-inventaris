@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Manajemen Inventaris</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 p-6">
+    <div class="container mx-auto">
+      <h1 class="text-3xl font-bold text-center mb-8">
+        Sistem Manajemen Inventaris
+      </h1>
+
+      <!-- Formulir Penambahan Barang (Awalnya disembunyikan) -->
+      <div
+        id="addItemFormContainer"
+        class="bg-white p-6 rounded shadow mb-6 hidden"
+      >
+        <h2 class="text-xl font-semibold mb-4">Tambah Barang</h2>
+        <form id="addItemForm">
+          <div class="space-y-4">
+            <div>
+              <label for="itemName" class="block text-sm font-medium"
+                >Nama Barang</label
+              >
+              <input
+                type="text"
+                id="itemName"
+                class="w-full p-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+            <div>
+              <label for="itemCategory" class="block text-sm font-medium"
+                >Kategori Barang</label
+              >
+              <select
+                id="itemCategory"
+                class="w-full p-2 border border-gray-300 rounded"
+                required
+              >
+                <option value="Elektronik">Elektronik</option>
+                <option value="Pakaian">Pakaian</option>
+                <option value="Makanan">Makanan</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div>
+              <label for="itemQuantity" class="block text-sm font-medium"
+                >Jumlah Barang</label
+              >
+              <input
+                type="number"
+                id="itemQuantity"
+                min="1"
+                class="w-full p-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+            <div>
+              <label for="itemPrice" class="block text-sm font-medium"
+                >Harga per Unit</label
+              >
+              <input
+                type="number"
+                id="itemPrice"
+                min="100"
+                class="w-full p-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+            <div>
+              <label for="itemDate" class="block text-sm font-medium"
+                >Tanggal Masuk</label
+              >
+              <input
+                type="date"
+                id="itemDate"
+                class="w-full p-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-blue-500 text-white p-2 rounded"
+            >
+              Tambah Barang
+            </button>
+          </div>
+        </form>
+        <button
+          id="cancelButton"
+          class="w-full bg-white-500 text-red-500 p-2 rounded"
+        >
+          Batal
+        </button>
+      </div>
+
+      <!-- Form Pencarian dan Filter -->
+      <div class="flex flex-col sm:flex-row sm:space-x-4 mb-6">
+        <!-- Input Pencarian -->
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Cari Barang..."
+          class="w-full sm:w-1/3 px-4 py-2 border border-gray-300 rounded-md mb-4 sm:mb-0"
+        />
+
+        <!-- Filter Kategori -->
+        <select
+          id="categoryFilter"
+          class="w-full sm:w-1/3 px-4 py-2 border border-gray-300 rounded-md"
+        >
+          <option value="">Semua Kategori</option>
+          <option value="Elektronik">Elektronik</option>
+          <option value="Pakaian">Pakaian</option>
+          <option value="Makanan">Makanan</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+
+        <!-- Tombol untuk Menambah Barang -->
+        <div class="sm:w-1/3 flex justify-center sm:justify-end">
+          <button
+            id="showFormButton"
+            class="bg-green-500 text-white p-2 rounded w-full sm:w-auto"
+          >
+            Tambah Barang
+          </button>
+        </div>
+      </div>
+
+      <!-- Daftar Barang -->
+      <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-xl font-semibold mb-4">Daftar Barang</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+              <tr>
+                <th class="px-4 py-2 text-left border">Nama Barang</th>
+                <th class="px-4 py-2 text-left border">Kategori</th>
+                <th class="px-4 py-2 text-left border">Jumlah Barang</th>
+                <th class="px-4 py-2 text-left border">Harga Total</th>
+                <th class="px-4 py-2 text-left border">Tanggal Masuk</th>
+                <th class="px-4 py-2 text-left border">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="itemTableBody">
+              <!-- Data barang akan ditampilkan di sini -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tombol Unduh CSV -->
+      <div class="flex mt-6">
+        <button
+          id="downloadCSV"
+          class="bg-blue-500 text-white p-2 p-2 rounded w-full sm:w-auto"
+        >
+          Unduh CSV
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

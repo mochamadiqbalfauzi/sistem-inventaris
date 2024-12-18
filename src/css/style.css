@@ -1,0 +1,183 @@
+/* Global Styling */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f7fafc; /* Light gray background */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header */
+h1 {
+  color: #2b6cb0;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+/* Form Styling */
+form {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #4fd1c5;
+  outline: none;
+}
+
+form button {
+  background-color: #38b2ac;
+  color: #fff;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+  background-color: #319795;
+}
+
+/* Add Item Form Button */
+#showFormButton {
+  background-color: #48bb78;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+#showFormButton:hover {
+  background-color: #38a169;
+}
+
+/* Cancel Button */
+#cancelButton {
+  color: #e53e3e;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#cancelButton:hover {
+  color: #c53030;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+table td {
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+table th {
+  background-color: #edf2f7;
+  color: #4a5568;
+  font-weight: 700;
+}
+
+table td {
+  color: #2d3748;
+}
+
+table tr:hover {
+  background-color: #f0f4f8;
+}
+
+table .action-button {
+  color: #3182ce;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+table .action-button:hover {
+  color: #2b6cb0;
+}
+
+/* Search and Filter Section */
+.search-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-filter input,
+.search-filter select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-filter input:focus,
+.search-filter select:focus {
+  border-color: #38b2ac;
+  outline: none;
+}
+
+.search-filter .add-item-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #38b2ac;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-filter .add-item-button:hover {
+  background-color: #319795;
+}
+
+/* Download CSV Button */
+#downloadCSV {
+  background-color: #2b6cb0;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#downloadCSV:hover {
+  background-color: #2c5282;
+}
